@@ -1,0 +1,19 @@
+name: Hola Mundo
+on:
+  push:
+  pull_request:
+
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Ejecutar script
+        run: python 1er_ej.py
